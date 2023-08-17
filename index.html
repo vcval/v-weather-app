@@ -16,6 +16,35 @@
   <body>
     <div class="container">
       <div class="weather-app">
+        <div class="row">
+          <div class="col-4">
+            <h1 id="city">New York</h1>
+            <div class="clearfix">
+              <div class="float-left">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
+                  alt="Partially cloudy icon"
+                  class="current-icon float-left"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <span class="temperature" id="temperature">19</span
+            ><span class="units"> <a href="#" id="celsius-link">°C</a> | </span>
+          </div>
+          <div class="col-4">
+            <ul>
+              <li id="week-day"></li>
+              <li id="date">Last Update 8:36pm</li>
+              <li id="description">Cloudy</li>
+            </ul>
+            <button type="button" class="btn btn-outline-secondary">
+              Current 📍
+            </button>
+          </div>
+        </div>
+
         <script src="src/script.js"></script>
       </div>
     </div>
