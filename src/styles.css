@@ -38,3 +38,7 @@ li {
   text-align: left;
   line-height: 1;
 }
+.current-icon {
+  height: 64px;
+  width: 64px;
+}
