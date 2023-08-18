@@ -63,3 +63,12 @@ function searchMyLocation(position) {
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(url).then(showTemperature);
 }
+
+function getCurrentPosition(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchMyLocation);
+}
+let locationButton = document.querySelector(".btn-outline-secondary");
+locationButton.addEventListener("click", getCurrentPosition);
+
+searchCity("New York");
