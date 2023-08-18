@@ -34,3 +34,15 @@ function search(event) {
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
+
+function showTemperature(response) {
+  let cityElement = document.querySelector("#city");
+  cityElement.innerHTML = response.data.name;
+  let degrees = Math.round(response.data.main.temp);
+  let temperatureElement = document.querySelector("#temperature");
+  let currentTempDisplay = `${degrees}°`;
+  temperatureElement.innerHTML = currentTempDisplay;
+
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].main;
+}
