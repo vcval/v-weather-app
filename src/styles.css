@@ -23,3 +23,11 @@ li {
   line-height: 1;
   list-style: none;
 }
+
+.weather-app {
+  border: 1px solid grey;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  border-radius: 15px;
+}
