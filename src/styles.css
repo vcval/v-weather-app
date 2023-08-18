@@ -31,3 +31,10 @@ li {
   max-width: 600px;
   border-radius: 15px;
 }
+.temperature {
+  display: inline;
+  font-size: 64px;
+  font-weight: 400;
+  text-align: left;
+  line-height: 1;
+}
