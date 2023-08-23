@@ -16,141 +16,144 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-app">
-        <div class="row">
-          <div class="col-4">
-            <h1 id="city">New York</h1>
-            <div class="clearfix">
-              <div class="float-left">
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
-                  alt="Partially cloudy icon"
-                  class="current-icon float-left"
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <div class="row">
+            <div class="col-4">
+              <h1 id="city">New York</h1>
+              <div class="d-flex">
+                <div>
+                  <img
+                    src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
+                    alt="Partially cloudy icon"
+                    class="current-icon"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <span class="temperature" id="temperature"></span
+              ><span class="units">
+                <a href="#" id="celsius-link">°C</a> |
+              </span>
+            </div>
+            <div class="col-4">
+              <ul>
+                <li id="week-day"></li>
+                <li id="date">Last Update 8:36pm</li>
+                <li id="description">Cloudy</li>
+              </ul>
+              <button type="button" class="btn btn-outline-secondary">
+                Current 📍
+              </button>
+            </div>
+          </div>
+
+          <form class="search-form" id="search-form">
+            <div class="row">
+              <div class="col-3"></div>
+              <div class="col-6">
+                <input
+                  type="search"
+                  placeholder="Your city"
+                  autofocus="on"
+                  autocomplete="off"
+                  id="city-input"
+                  class="form-control shadow-sm"
+                />
+              </div>
+
+              <div class="col-3">
+                <input
+                  type="submit"
+                  class="form-control btn btn-primary shadow-sm"
                 />
               </div>
             </div>
-          </div>
-          <div class="col-4">
-            <span class="temperature" id="temperature"></span
-            ><span class="units"> <a href="#" id="celsius-link">°C</a> | </span>
-          </div>
-          <div class="col-4">
-            <ul>
-              <li id="week-day"></li>
-              <li id="date">Last Update 8:36pm</li>
-              <li id="description">Cloudy</li>
-            </ul>
-            <button type="button" class="btn btn-outline-secondary">
-              Current 📍
-            </button>
-          </div>
-        </div>
+          </form>
 
-        <form class="search-form" id="search-form">
-          <div class="row">
-            <div class="col-3"></div>
-            <div class="col-6">
-              <input
-                type="search"
-                placeholder="Your city"
-                autofocus="on"
-                autocomplete="off"
-                id="city-input"
-                class="form-control shadow-sm"
-              />
-            </div>
-
-            <div class="col-3">
-              <input
-                type="submit"
-                class="form-control btn btn-primary shadow-sm"
-              />
-            </div>
-          </div>
-        </form>
-
-        <div class="card">
-          <div class="row">
-            <div class="card col">
-              <div class="card-body">
-                <h5 class="card-title">Wind</h5>
-                <p class="card-text">🌬️ km/h</p>
+          <div class="card">
+            <div class="row">
+              <div class="card col">
+                <div class="card-body">
+                  <h5 class="card-title">Wind</h5>
+                  <p class="card-text">🌬️ km/h</p>
+                </div>
               </div>
-            </div>
-            <div class="card col">
-              <div class="card-body">
-                <h5 class="card-title">Rainfall</h5>
-                <p class="card-text">☔️ %</p>
+              <div class="card col">
+                <div class="card-body">
+                  <h5 class="card-title">Rainfall</h5>
+                  <p class="card-text">☔️ %</p>
+                </div>
               </div>
-            </div>
 
-            <div class="card col">
-              <div class="card-body">
-                <h5 class="card-title">Visibility</h5>
-                <p class="card-text">🌁 km</p>
+              <div class="card col">
+                <div class="card-body">
+                  <h5 class="card-title">Visibility</h5>
+                  <p class="card-text">🌁 km</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="card">
-          <div class="row">
-            <div class="card col">
-              <div class="card-body">
-                <h5 class="card-title">Mon</h5>
-                <p class="card-text">🌥️</p>
-                <h6 class="temperature-high-low">91° / 72°</h6>
+          <div class="card">
+            <div class="row">
+              <div class="card col">
+                <div class="card-body">
+                  <h5 class="card-title">Mon</h5>
+                  <p class="card-text">🌥️</p>
+                  <h6 class="temperature-high-low">91° / 72°</h6>
+                </div>
               </div>
-            </div>
-            <div class="card col">
-              <div class="card-body">
-                <h5 class="card-title">Tue</h5>
-                <p class="card-text">🌤️</p>
-                <h6 class="temperature-high-low">89° / 75°</h6>
+              <div class="card col">
+                <div class="card-body">
+                  <h5 class="card-title">Tue</h5>
+                  <p class="card-text">🌤️</p>
+                  <h6 class="temperature-high-low">89° / 75°</h6>
+                </div>
               </div>
-            </div>
-            <div class="card col">
-              <div class="card-body">
-                <h5 class="card-title">Wed</h5>
-                <p class="card-text">☀️</p>
-                <h6 class="temperature-high-low">92° / 72°</h6>
+              <div class="card col">
+                <div class="card-body">
+                  <h5 class="card-title">Wed</h5>
+                  <p class="card-text">☀️</p>
+                  <h6 class="temperature-high-low">92° / 72°</h6>
+                </div>
               </div>
-            </div>
-            <div class="card col">
-              <div class="card-body">
-                <h5 class="card-title">Thu</h5>
-                <p class="card-text">🌧</p>
-                <h6 class="temperature-high-low">71° / 68°</h6>
+              <div class="card col">
+                <div class="card-body">
+                  <h5 class="card-title">Thu</h5>
+                  <p class="card-text">🌧</p>
+                  <h6 class="temperature-high-low">71° / 68°</h6>
+                </div>
               </div>
-            </div>
-            <div class="card col">
-              <div class="card-body">
-                <h5 class="card-title">Fri</h5>
-                <p class="card-text">🌦</p>
-                <h6 class="temperature-high-low">81° / 72°</h6>
+              <div class="card col">
+                <div class="card-body">
+                  <h5 class="card-title">Fri</h5>
+                  <p class="card-text">🌦</p>
+                  <h6 class="temperature-high-low">81° / 72°</h6>
+                </div>
               </div>
-            </div>
-            <div class="card col">
-              <div class="card-body">
-                <h5 class="card-title">Sat</h5>
-                <p class="card-text">🌤️</p>
-                <h6 class="temperature-high-low">89° / 73°</h6>
+              <div class="card col">
+                <div class="card-body">
+                  <h5 class="card-title">Sat</h5>
+                  <p class="card-text">🌤️</p>
+                  <h6 class="temperature-high-low">89° / 73°</h6>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
-        <script src="src/script.js"></script>
-        <script
-          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-          crossorigin="anonymous"
-        ></script>
+        <p>
+          <a href="https://github.com/vcval/v-weather-app">Open-source code</a>,
+          by Valeriia Chendyrova
+        </p>
       </div>
-      <p>
-        <a href="https://github.com/vcval/v-weather-app">Open-source code</a>,
-        by Valeriia Chendyrova
-      </p>
     </div>
+    <script src="src/script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
