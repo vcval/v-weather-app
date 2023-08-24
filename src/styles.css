@@ -70,3 +70,14 @@ a {
 .weather-temperature .active :hover {
   color: rgb(33, 33, 33);
 }
+
+.weather-forecast {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.card-title {
+  color: blue;
+  font-size: 16px;
+  text-align: center;
+}
