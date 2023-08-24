@@ -22,6 +22,7 @@ li {
   height: 19px;
   line-height: 1;
   list-style: none;
+  text-transform: capitalize;
 }
 
 .weather-app {
@@ -48,9 +49,25 @@ li {
   top: -34px;
 }
 .city-search-form {
-  margin-bottom: 11px;
+  margin-bottom: 13px;
 }
 .weather-app-wrapper {
   max-width: 600px;
   margin: 20px auto;
+}
+.location-button {
+  margin-bottom: 10px;
+}
+.weather-temperature {
+  text-decoration: none;
+}
+
+.weather-temperature .active {
+  color: rgb(33, 33, 33);
+  text-decoration: none;
+  cursor: default;
+}
+
+.weather-temperature .active :hover {
+  color: rgb(33, 33, 33);
 }

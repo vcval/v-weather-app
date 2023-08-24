@@ -28,11 +28,14 @@
               </div>
             </div>
             <div class="col-4">
-              <span class="temperature" id="temperature"></span>
-              <span class="units">
-                <a href="#" id="celsius-link" class="active">°C</a> |
-                <a href="#" id="fahrenheit-link">°F</a>
-              </span>
+              <div class="weather-temperature">
+                <span class="temperature" id="temperature"></span>
+                <span class="units">
+                  <a href="#" id="celsius-link" class="active">°C</a>
+                  |
+                  <a href="#" id="fahrenheit-link">°F</a>
+                </span>
+              </div>
             </div>
             <div class="col-4">
               <ul>
@@ -40,13 +43,16 @@
                 <li id="date">Last Update 8:36pm</li>
                 <li id="description">Cloudy</li>
               </ul>
-              <button type="button" class="btn btn-outline-secondary">
-                Current 📍
+              <button
+                type="button"
+                class="btn btn-outline-secondary location-button"
+              >
+                📍 Current Location
               </button>
             </div>
           </div>
 
-          <form class="search-form" id="search-form">
+          <form class="city-search-form" id="search-form">
             <div class="row">
               <div class="col-3"></div>
               <div class="col-6">
@@ -142,7 +148,7 @@
         </div>
         <p>
           <a href="https://github.com/vcval/v-weather-app">Open-source code</a>,
-          by Valeriia Chendyrova
+          by Valeriia C.
         </p>
       </div>
     </div>

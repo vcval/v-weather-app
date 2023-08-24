@@ -32,9 +32,6 @@ function search(event) {
   searchCity(cityInput.value);
 }
 
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", search);
-
 function getForecast(coordinates) {
   let apiKey = "2tc65f4a56ff11b58f44548o334d0ad0";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=f2f8fa7c83899cc436t9bfbo024d31c4&units=imperial`;
@@ -47,6 +44,8 @@ function showTemperature(response) {
   let degrees = Math.round(response.data.temperature.current);
   let temperatureElement = document.querySelector("#temperature");
   let currentTempDisplay = `${degrees}°`;
+
+  celsiusTemperature = response.data.temperature.current;
 
   temperatureElement.innerHTML = currentTempDisplay;
   document.querySelector("#description").innerHTML =
@@ -88,5 +87,37 @@ function getCurrentPosition(event) {
 }
 let locationButton = document.querySelector(".btn-outline-secondary");
 locationButton.addEventListener("click", getCurrentPosition);
+
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+}
+
+let celsiusTemperature = null;
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemperature);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", search);
 
 searchCity("New York");
