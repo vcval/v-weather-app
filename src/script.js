@@ -56,8 +56,9 @@ function showTemperature(response) {
 
   iconElement.setAttribute(
     "src",
-    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${weatherData.condition.icon}.png`
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
+
   iconElement.setAttribute("alt", weatherData.condition.icon);
 
   getForecast(weatherData.coordinates);
