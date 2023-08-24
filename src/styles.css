@@ -81,3 +81,10 @@ a {
   font-size: 16px;
   text-align: center;
 }
+.temperature-high-low {
+  color: grey;
+  font-size: 13px;
+}
+.forecast-temperature-min {
+  opacity: 0.5;
+}
