@@ -35,16 +35,32 @@ function search(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
 
+function getForecast(coordinates) {
+  let apiKey = "2tc65f4a56ff11b58f44548o334d0ad0";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=f2f8fa7c83899cc436t9bfbo024d31c4&units=imperial`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showTemperature(response) {
   let cityElement = document.querySelector("#city");
-  cityElement.innerHTML = response.data.name;
-  let degrees = Math.round(response.data.main.temp);
+  cityElement.innerHTML = response.data.city;
+  let degrees = Math.round(response.data.temperature.current);
   let temperatureElement = document.querySelector("#temperature");
   let currentTempDisplay = `${degrees}°`;
-  temperatureElement.innerHTML = currentTempDisplay;
 
+  temperatureElement.innerHTML = currentTempDisplay;
   document.querySelector("#description").innerHTML =
-    response.data.weather[0].main;
+    response.data.condition.description;
+
+  let iconElement = document.querySelector("#icon");
+
+  iconElement.setAttribute(
+    "src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${weatherData.condition.icon}.png`
+  );
+  iconElement.setAttribute("alt", weatherData.condition.icon);
+
+  getForecast(weatherData.coordinates);
 }
 
 function searchCity(city) {
