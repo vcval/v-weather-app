@@ -104,7 +104,7 @@ function showCelsiusTemperature(event) {
 }
 //
 
-function showForecast() {
+function showForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -131,6 +131,12 @@ function showForecast() {
 }
 
 //
+function getForecast(coordinates) {
+  let apiKey = "2tc65f4a56ff11b58f44548o334d0ad0";
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&key=2tc65f4a56ff11b58f44548o334d0ad0&units=metric`;
+
+  axios.get(apiURL).then(displayForecast);
+}
 
 let celsiusTemperature = null;
 
@@ -145,3 +151,4 @@ searchForm.addEventListener("submit", search);
 
 searchCity("New York");
 showForecast();
+getForecast(response.data.coord);
