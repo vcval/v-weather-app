@@ -22,6 +22,15 @@ function formatDate(date) {
 
   return `${day} ${hours}:${minutes}`;
 }
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
@@ -52,9 +61,9 @@ function showTemperature(response) {
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
 
-  iconElement.setAttribute("alt", weatherData.condition.icon);
+  iconElement.setAttribute("alt", response.data.condition.description);
 
-  getForecast(weatherData.coordinates);
+  getForecast(response.data.coordinates);
 }
 
 function searchCity(city) {
@@ -105,21 +114,38 @@ function showCelsiusTemperature(event) {
 //
 
 function showForecast(response) {
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  let forecastDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  forecastDays.forEach(function (day) {
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+    }
+
     forecastHTML =
       forecastHTML +
       `     <div class="card col-2">
                 <div class="card-body" id="forecast">
-                  <h5 class="card-title weather-forecast-day">${day}</h5>
-                  <img src="" alt="" class="current-icon" id="icon" />
+                  <h5 class="card-title weather-forecast-day current-icon">${formatDay(
+                    forecastDay.time
+                  )}</h5>
+ <img
+            src=http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+              forecastDay.weather[0].icon
+            }.png;
+            alt=""
+            width="42"
+          />
 
                   <h6 class="temperature-high-low">
-                    <span class="forecast-temperature-max"> 91°</span> /
-                    <span class="forecast-temperature-min">72°</span>
+                    <span class="forecast-temperature-max"> ${
+                      forecastDay.temperature.maximum
+                    }°</span> /
+                    <span class="forecast-temperature-min">${
+                      forecastDay.temperature.minimum
+                    }°</span>
                   </h6>
                 </div>
           </div>  
@@ -133,9 +159,11 @@ function showForecast(response) {
 //
 function getForecast(coordinates) {
   let apiKey = "2tc65f4a56ff11b58f44548o334d0ad0";
-  let apiURL = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&key=2tc65f4a56ff11b58f44548o334d0ad0&units=metric`;
 
-  axios.get(apiURL).then(displayForecast);
+  let lat = coordinates.latitude;
+  let long = coordinates.longitude;
+  let apiForecastUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${long}&lat=${lat}&key=${apiKey}&units=metric`;
+  axios.get(apiForecastUrl).then(showForecast);
 }
 
 let celsiusTemperature = null;
