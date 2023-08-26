@@ -121,7 +121,7 @@ function showForecast(response) {
   let forecastHTML = `<div class="row">`;
 
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index < 5) {
     }
 
     forecastHTML =
@@ -132,9 +132,7 @@ function showForecast(response) {
                     forecastDay.time
                   )}</h5>
  <img
-            src=http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
-              forecastDay.weather[0].icon
-            }.png;
+            src="${forecastDay.condition.icon_url}"
             alt=""
             width="42"
           />
@@ -178,5 +176,3 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
 
 searchCity("New York");
-showForecast();
-getForecast(response.data.coord);
