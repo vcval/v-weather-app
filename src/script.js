@@ -121,12 +121,10 @@ function showForecast(response) {
   let forecastHTML = `<div class="row">`;
 
   forecast.forEach(function (forecastDay, index) {
-    if (index < 5) {
-    }
-
-    forecastHTML =
-      forecastHTML +
-      `     <div class="card col-2">
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `     <div class="card col-2">
                 <div class="card-body" id="forecast">
                   <h5 class="card-title weather-forecast-day current-icon">${formatDay(
                     forecastDay.time
@@ -148,6 +146,7 @@ function showForecast(response) {
                 </div>
           </div>  
              `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
