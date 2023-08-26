@@ -41,7 +41,6 @@
               <ul>
                 <li id="week-day"></li>
                 <li id="date">Last Update 8:36pm</li>
-                <li id="description">Cloudy</li>
               </ul>
               <button
                 type="button"
@@ -80,20 +79,20 @@
               <div class="card col">
                 <div class="card-body">
                   <h5 class="card-title">Wind</h5>
-                  <p class="card-text">🌬️ km/h</p>
+                  <p class="card-text" id="wind"></p>
                 </div>
               </div>
               <div class="card col">
                 <div class="card-body">
                   <h5 class="card-title">Humidity</h5>
-                  <p class="card-text">☔️ %</p>
+                  <p class="card-text" id="humidity"></p>
                 </div>
               </div>
 
               <div class="card col">
                 <div class="card-body">
-                  <h5 class="card-title">Visibility</h5>
-                  <p class="card-text">🌁 km</p>
+                  <h5 class="card-title">Condition</h5>
+                  <p class="card-text" id="description">🌁 km</p>
                 </div>
               </div>
             </div>
@@ -103,13 +102,15 @@
             <div class="row">
               <div class="card col-2">
                 <div class="card-body">
-                  <h5 class="card-title weather-forecast-day">Mon</h5>
-                  <img src="" alt="" class="current-icon" id="icon" />
+                  <div>
+                    <h5 class="card-title weather-forecast-day">Mon</h5>
+                    <img src="" alt="" class="current-icon" id="icon" />
 
-                  <h6 class="temperature-high-low">
-                    <span class="forecast-temperature-max"> 91°</span> /
-                    <span class="forecast-temperature-min">72°</span>
-                  </h6>
+                    <h6 class="temperature-high-low">
+                      <span class="forecast-temperature-max"> 91°</span> /
+                      <span class="forecast-temperature-min">72°</span>
+                    </h6>
+                  </div>
                 </div>
               </div>
             </div>

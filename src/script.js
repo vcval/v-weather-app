@@ -51,8 +51,17 @@ function showTemperature(response) {
   celsiusTemperature = response.data.temperature.current;
 
   temperatureElement.innerHTML = currentTempDisplay;
+
   document.querySelector("#description").innerHTML =
     response.data.condition.description;
+
+  //
+
+  //
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
+
+  //
 
   let iconElement = document.querySelector("#icon");
 
@@ -126,7 +135,7 @@ function showForecast(response) {
         forecastHTML +
         `     <div class="card col-2">
                 <div class="card-body" id="forecast">
-                  <h5 class="card-title weather-forecast-day current-icon">${formatDay(
+                  <h5 class="card-title weather-forecast-day ">${formatDay(
                     forecastDay.time
                   )}</h5>
  <img
@@ -151,6 +160,13 @@ function showForecast(response) {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+//
+function displayWeatherCondition(response) {
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = response.data.wind.speed;
+
+  getForcast(response.data.coord);
 }
 
 //
