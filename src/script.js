@@ -56,10 +56,15 @@ function showTemperature(response) {
     response.data.condition.description;
 
   //
+  let humidityElement = document.querySelector("#humidity");
+  let humidityValue = Math.round(response.data.temperature.humidity);
 
+  humidityElement.innerHTML = ` ${humidityValue} %`;
   //
   let windElement = document.querySelector("#wind");
-  windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
+  let windValue = Math.round(response.data.wind.speed * 3.6);
+
+  windElement.innerHTML = ` ${windValue} km/h`;
 
   //
 
@@ -135,7 +140,7 @@ function showForecast(response) {
         forecastHTML +
         `     <div class="card col-2">
                 <div class="card-body" id="forecast">
-                  <h5 class="card-title weather-forecast-day ">${formatDay(
+                  <h5 class="card-title weather-forecast-day">${formatDay(
                     forecastDay.time
                   )}</h5>
  <img
@@ -163,8 +168,7 @@ function showForecast(response) {
 }
 //
 function displayWeatherCondition(response) {
-  let windElement = document.querySelector("#wind");
-  windElement.innerHTML = response.data.wind.speed;
+  //
 
   getForcast(response.data.coord);
 }

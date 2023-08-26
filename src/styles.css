@@ -76,12 +76,12 @@ a {
   text-align: center;
 }
 
-.weather-forecast-day {
-}
-
 .card-title {
   color: blue;
   font-size: 16px;
+  text-align: center;
+}
+.card-text {
   text-align: center;
 }
 .temperature-high-low {
