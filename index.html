@@ -13,6 +13,13 @@
     />
     <link rel="stylesheet" href="src/styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gelasio&family=Inter&family=Lugrasimo&family=Racing+Sans+One&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
@@ -20,7 +27,7 @@
         <div class="weather-app">
           <div class="row">
             <div class="col-4">
-              <h1 id="city">New York</h1>
+              <h1 id="city" class="city-title">New York</h1>
               <div class="d-flex">
                 <div>
                   <img src="" alt="" class="current-icon" id="icon" />
@@ -32,14 +39,14 @@
                 <span class="temperature" id="temperature"></span>
                 <span class="units">
                   <a href="#" id="celsius-link" class="active">°C</a>
-                  |
+                  <span class="line">|</span>
                   <a href="#" id="fahrenheit-link">°F</a>
                 </span>
               </div>
             </div>
             <div class="col-4">
               <ul>
-                <li id="week-day"></li>
+                <li id="week-day" class="update">Last Update:</li>
                 <li id="date">Last Update 8:36pm</li>
               </ul>
               <button
@@ -114,7 +121,7 @@
             </div>
           </div>
         </div>
-        <p>
+        <p class="source-code">
           <a href="https://github.com/vcval/v-weather-app">Open-source code</a>,
           by Valeriia C.
         </p>

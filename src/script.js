@@ -64,7 +64,7 @@ function showTemperature(response) {
   let windElement = document.querySelector("#wind");
   let windValue = Math.round(response.data.wind.speed * 3.6);
 
-  windElement.innerHTML = ` ${windValue} km/h`;
+  windElement.innerHTML = ` ${windValue} m/h`;
 
   //
 

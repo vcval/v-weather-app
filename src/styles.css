@@ -1,13 +1,13 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", sans-serif;
+  background-color: #bde0fe;
 }
 h1 {
-  color: blue;
-
-  font-size: 24px;
-  font-weight: 100;
+  color: #003554;
+  margin: 10px auto;
+  font-size: 34px;
+  font-weight: bold;
   line-height: 28px;
-
   text-align: left;
 }
 ul {
@@ -15,7 +15,7 @@ ul {
   padding: 0;
 }
 li {
-  color: blueviolet;
+  color: #004d79;
   display: block;
   font-size: 16px;
   font-weight: 100;
@@ -28,22 +28,25 @@ a {
   text-decoration: none;
 }
 .weather-app {
-  border: 1px solid grey;
+  border: 1px solid #287fad;
   padding: 20px;
-
-  max-width: 600px;
+  background-color: #34a3df;
+  max-width: 650px;
   border-radius: 15px;
 }
+
 .temperature {
   display: inline;
   font-size: 64px;
   font-weight: 400;
   text-align: left;
   line-height: 1;
+  color: #bde0fe;
 }
 .current-icon {
-  height: 64px;
-  width: 64px;
+  height: 90px;
+  width: 90px;
+  padding: none;
 }
 .units {
   position: relative;
@@ -59,35 +62,66 @@ a {
 }
 .location-button {
   margin-bottom: 10px;
+  border: 1px solid #3ebbff;
+  background-color: #33a9e8;
+  color: #a4ddfb;
+}
+.location-button:hover {
+  background-color: #0582ca;
+  border: 1px solid #3ebbff;
+}
+.btn-primary {
+  background-color: #eab464;
+  border: 1px solid #3ebbff;
+}
+
+.btn-primary:hover {
+  background-color: #7069aa;
 }
 
 .weather-temperature .active {
-  color: rgb(33, 33, 33);
+  color: #bde0fe;
   text-decoration: none;
   cursor: default;
 }
 
 .weather-temperature .active :hover {
-  color: rgb(33, 33, 33);
+  color: #bde0fe;
 }
-
+.line {
+  color: #bde0fe;
+}
+.update {
+  color: #004d79;
+  font-weight: 500;
+  margin-top: 10px;
+}
 .weather-forecast {
   margin-top: 10px;
   text-align: center;
 }
+.card {
+  background-color: #0582ca;
+  border: 1px solid #33a9e8;
+  max-width: 700px;
+}
 
 .card-title {
-  color: blue;
-  font-size: 16px;
+  color: #bde0fe;
+  font-weight: bold;
   text-align: center;
+  font-size: 18px;
 }
 .card-text {
   text-align: center;
 }
 .temperature-high-low {
-  color: grey;
+  color: #003554;
   font-size: 13px;
 }
 .forecast-temperature-min {
   opacity: 0.5;
+}
+.source-code {
+  color: #3ebbff;
 }
