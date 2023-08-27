@@ -94,7 +94,7 @@ function searchMyLocation(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
 
-  let url = `https://api.shecodes.io/weather/v1/current?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  let url = `https://api.shecodes.io/weather/v1/current?lat=${lat}&lon=${lon}&key=${apiKey}&units=metric`;
   axios.get(url).then(showTemperature);
 }
 
@@ -102,7 +102,8 @@ function getCurrentPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchMyLocation);
 }
-let locationButton = document.querySelector("#btn-outline-secondary");
+
+let locationButton = document.querySelector(".btn-outline-secondary");
 locationButton.addEventListener("click", getCurrentPosition);
 
 function showFahrenheitTemperature(event) {
@@ -194,4 +195,4 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
 
-searchCity("Sydney");
+searchCity("New York");
