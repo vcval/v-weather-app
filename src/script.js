@@ -102,7 +102,7 @@ function getCurrentPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchMyLocation);
 }
-let locationButton = document.querySelector(".btn-outline-secondary");
+let locationButton = document.querySelector("#btn-outline-secondary");
 locationButton.addEventListener("click", getCurrentPosition);
 
 function showFahrenheitTemperature(event) {
@@ -194,4 +194,4 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
 
-searchCity("New York");
+searchCity("Sydney");
