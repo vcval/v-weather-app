@@ -105,14 +105,14 @@ a {
 .card {
   background-color: #0582ca;
   border: 1px solid #33a9e8;
-  max-width: 700px;
+  max-width: 600px;
 }
 
 .card-title {
   color: #bde0fe;
   font-weight: bold;
   text-align: center;
-  font-size: 18px;
+  font-size: 17px;
 }
 .card-text {
   text-align: center;
